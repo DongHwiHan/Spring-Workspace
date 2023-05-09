@@ -30,9 +30,9 @@
 	<result column="BOARD_CONTENT" property="boardContent"/>
 	<result column="USER_NO" property="userNo"/>
 	<result column="PROFILE_IMG" property="profileImage"/>
-	
-	<collection property="imgList" javaType="java.util.ArrayList" ofType="boardImg" 
-	   select="selectImgList" column="BOARD_NO"/>
+	<!--  -->
+	<!-- <collection property="imgList" javaType="java.util.ArrayList" ofType="boardImg" 
+	   select="selectImgList" column="BOARD_NO"/> -->
 	<!-- 
 		selectImgList의 조회결과를 Board VO클래스의 imgList필드에 담겠다 라는 의미
 		
@@ -261,5 +261,11 @@
 		${deleteList}		 
 	)
 </delete>
+
+<select id="selectBoardImg" resultMap="boardImgResultSet">
+	SELECT *
+	FROM BOARD_IMG
+	ORDER BY IMG_LEVEL
+</select>
 
 </mapper>

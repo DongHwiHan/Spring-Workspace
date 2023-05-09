@@ -14,7 +14,7 @@ import com.kh.spring.board.model.dao.BoardDAO;
 import com.kh.spring.board.model.vo.Board;
 import com.kh.spring.board.model.vo.BoardImg;
 import com.kh.spring.board.model.vo.BoardType;
-import com.kh.spring.common.Utils;
+import com.kh.spring.main.Utils;
 import com.kh.spring.common.model.vo.PageInfo;
 import com.kh.spring.common.template.Pagination;
 
@@ -218,6 +218,11 @@ public class BoardServiceImpl implements BoardService {
 		
 		return result;
 		
+	}
+	
+	public List<BoardImg> selectBoardImg(){
+		
+		return boardDao.selectBoardImg();
 	}
 	
 }

@@ -12,6 +12,7 @@ public interface ReplyService {
 	// 댓글 목록조회
 	List<Reply> selectReplyList(int bno);
 	// 댓글 수정
-	
+	int deleteReply(int replyNo);
 	// 댓글 삭제
+	int updateReply(Reply reply);
 }

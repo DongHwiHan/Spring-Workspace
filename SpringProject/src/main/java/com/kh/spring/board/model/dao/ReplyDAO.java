@@ -14,11 +14,22 @@ public class ReplyDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
+	// 댓글 등록
 	public int insertReply(Reply reply) {
 		return sqlSession.insert("replyMapper.insertReply", reply);
 	}
 	
+	// 댓글 목록 조회
 	public List<Reply> selectReplyList(int bno){
 		return sqlSession.selectList("replyMapper.selectReplyList",bno);
+	}
+	// 댓글 삭제
+	public int deleteReply(int replyNo) {
+		return sqlSession.update("replyMapper.deleteReply", replyNo);
+	}
+	
+	// 댓글 수정
+	public int updateReply(Reply reply) {
+		return sqlSession.update("replyMapper.updateReply", reply);
 	}
 }
